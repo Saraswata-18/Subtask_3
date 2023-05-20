@@ -1,0 +1,26 @@
+name: issue_response
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          issue-number: ${{github.event.issue.number}}
+          body: |
+           Thank You for Raising This Issue! 
+
+            ![Meme](https://static.pupperish.com/images/iuhNwqKdFMPn_3895_700.jpg)
+
+            Please wait patiently while we look into it.
+
+            We appreciate your contribution!
+
+            Have a great day!
